@@ -1,0 +1,29 @@
+{
+  "name": "untappdretriever",
+  "version": "1.0.0",
+  "description": "get credentials of a user from untappd",
+  "main": "authenticator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node authenticator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikeConsemulder/"
+  },
+  "homepage": "https://github.com/MikeConsemulder/",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-basic-auth": "^1.1.5",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "dotenv": "^6.0.0"
+  }
+}

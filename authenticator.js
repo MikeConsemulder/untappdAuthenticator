@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const basicAuth = require('express-basic-auth');
 const bodyParser = require('body-parser');
 const RequestHandler = require("./assets/classes/RequestHandler");
 
@@ -8,25 +7,6 @@ require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-//set basic authentication
-app.use(basicAuth({
-    authorizer: authorizer,
-    authorizeAsync: true
-}))
-
-function authorizer(username, password, cb) {
-    //get username and password from .env
-    let BasicAuthUsername = process.env.BASIC_AUTH_USERNAME;
-    let BasicAuthPassword = process.env.BASIC_AUTH_PASSWORD;
-
-    if (username === BasicAuthUsername && password === BasicAuthPassword) {
-
-        return cb(null, true);
-    }
-
-    return cb('Unauthorized, biatch', false)
-}
 
 //set the port, if there is no env port use 8080 / heroku stuff,, you know
 var port = process.env.PORT || 8080;
